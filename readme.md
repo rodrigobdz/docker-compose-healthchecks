@@ -16,6 +16,20 @@ healthcheck:
 
 [Source](https://til.codes/health-check-option-in-docker-to-wait-for-dependent-containers-to-be-healthy/)
 
+### Redis
+
+```yml
+redis:
+  image: redis
+  healthcheck:
+    test: ["CMD", "redis-cli", "ping"]
+    interval: 1s
+    timeout: 3s
+    retries: 30
+```
+
+[Source](https://gist.github.com/phuysmans/4f67a7fa1b0c6809a86f014694ac6c3a)
+
 ### Elasticsearch
 
 ```yml
