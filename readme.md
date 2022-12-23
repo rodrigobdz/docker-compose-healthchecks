@@ -94,8 +94,9 @@ wait_until_container_healthy() {
 }
 ```
 
-The previous snippet is an improved version of [this](https://stackoverflow.com/a/33520390/2227405) StackOverflow answer.
+This snippet is an improved version of [this](https://stackoverflow.com/a/33520390/2227405) StackOverflow answer.
 
 ## Related
 
-- [docker-library/healthcheck](https://github.com/docker-library/healthcheck) - Examples for Dockerfiles
+- [`docker/awesome-compose`](https://github.com/docker/awesome-compose) - Official Docker Compose examples (includes healthchecks)
+- [`docker-library/healthcheck`](https://github.com/docker-library/healthcheck) - Examples for Dockerfiles
