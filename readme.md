@@ -42,7 +42,20 @@ redis:
 
 [Source](https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-docker.html)
 
-### Minio
+### Minio RELEASE.2023-11-01T18-37-25Z and older
+
+```yml
+healthcheck:
+  test: timeout 5s bash -c ':> /dev/tcp/127.0.0.1/9000' || exit 1
+  start_period: 5s
+  interval: 10s
+  timeout: 5s
+  retries: 2
+```
+
+Source [[1]](https://github.com/minio/minio/issues/18373)
+
+### Minio RELEASE.2023-10-25T06-33-25Z and earlier
 
 ```yml
 healthcheck:
@@ -53,7 +66,6 @@ healthcheck:
 ```
 
 Source [[1]](https://github.com/minio/minio/blob/c9d502e6fadf2c2cbb1e2ce7a9dc8de7dfed1d34/docs/orchestration/docker-swarm/docker-compose-secrets.yaml#L25-L29) [[2]](https://github.com/minio/minio/blob/bdd094bc39275a0543484c09f4fb99ce3fe14787/docs/metrics/healthcheck/README.md)
-
 ### Mongo
 
 ```yml
