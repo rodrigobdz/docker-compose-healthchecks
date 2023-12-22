@@ -33,7 +33,7 @@ redis:
 ### Elasticsearch
 
 ```yml
- healthcheck:
+healthcheck:
   test: curl --silent http://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
   interval: 30s
   timeout: 10s
@@ -42,7 +42,20 @@ redis:
 
 [Source](https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-docker.html)
 
-### Minio
+### Minio RELEASE.2023-11-01T18-37-25Z and older
+
+```yml
+healthcheck:
+  test: timeout 5s bash -c ':> /dev/tcp/127.0.0.1/9000' || exit 1
+  start_period: 5s
+  interval: 10s
+  timeout: 5s
+  retries: 2
+```
+
+Source [[1]](https://github.com/minio/minio/issues/18373)
+
+### Minio RELEASE.2023-10-25T06-33-25Z and earlier
 
 ```yml
 healthcheck:
