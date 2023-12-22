@@ -33,7 +33,7 @@ redis:
 ### Elasticsearch
 
 ```yml
- healthcheck:
+healthcheck:
   test: curl --silent http://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
   interval: 30s
   timeout: 10s
@@ -66,6 +66,7 @@ healthcheck:
 ```
 
 Source [[1]](https://github.com/minio/minio/blob/c9d502e6fadf2c2cbb1e2ce7a9dc8de7dfed1d34/docs/orchestration/docker-swarm/docker-compose-secrets.yaml#L25-L29) [[2]](https://github.com/minio/minio/blob/bdd094bc39275a0543484c09f4fb99ce3fe14787/docs/metrics/healthcheck/README.md)
+
 ### Mongo
 
 ```yml
