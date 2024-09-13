@@ -69,6 +69,8 @@ Source [[1]](https://github.com/minio/minio/blob/c9d502e6fadf2c2cbb1e2ce7a9dc8de
 
 ### Mongo
 
+Note: `mongosh` may need to be used rather than `mongo`, depending on which image you're using.
+
 ```yml
 healthcheck:
   test:
